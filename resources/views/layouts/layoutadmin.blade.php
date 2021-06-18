@@ -48,9 +48,19 @@
         <span>Transaksi</span></a>
     </li>
     <li class="nav-item">
+        <a class="nav-link" href="/admin/data_user">
+        <i class="fas fa-fw fa-file"></i>
+        <span>Tambah User</span></a>
+    </li> 
+    <li class="nav-item">
         <a class="nav-link" href="/admin/pendapatan">
         <i class="fas fa-fw fa-file"></i>
         <span>Pendapatan</span></a>
+    </li>
+    <li class="nav-item ">
+        <a class="nav-link" href="/admin/dataCuci">
+        <i class="fas fa-fw fa-file"></i>
+        <span>Notifikasi</span></a>
     </li> 
    
     <!-- Divider -->

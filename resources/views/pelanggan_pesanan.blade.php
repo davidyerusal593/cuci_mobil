@@ -42,6 +42,7 @@
               <th>Karyawan</th>
               <th>Nama Paket</th>
               <th>Bukti Bayar</th>
+              <th>Tips</th>
               <th>Validasi Pembayaran</th>
               <th>Rating</th>
               <th>keterangan</th>
@@ -57,23 +58,32 @@
               <td scope="row"><?php echo $no++ ?></td>
               <td><?php echo $p->jam_cuci?></td>
               <td><?php echo $p->tgl_cuci?></td>
-              <td><?php echo $p->name?></td>
+              <td><?php echo $p->petugas?></td>
               <td><?php echo $p->nama_paket?></td>
               <td><?php echo $p->bukti_bayar?>
+              
               <a href="/pelanggan/pesan/opendokumen/{{$p->bukti_bayar }}" target="_blank" class="btn btn-primary">View<span class="glyphicon glyphicon-eye-open"></a>
 
               </td>
-              <td><?php echo $p->validasi?></td>
+              <td><?php echo $p->tips?>
+                @if($p->validasi == 0)
+                  <td>Diproses</td>
+                  @else 
+                  <td>Lunas</td>
+
               <td><?php echo $p->rating?></td>
               <td><?php echo $p->keterangan?></td>
               <td><?php echo $p->pencucian?></td>
-              <td><?php echo $p->status?></td>
-              
+              @if($p->status == 0)
+                  <td>Diproses</td>
+                  @else 
+                  <td>Selesai</td>              
               <td>
               <a href="/pelanggan/pesan/edit/{{ $p->id_transaksi }}" class="btn btn-success" data-toggle="tooltip" title="Edit" >Edit</i></a>
                   
               </td>
-              
+              @endif
+              @endif
             </tr>
             @endforeach
             </tbody>

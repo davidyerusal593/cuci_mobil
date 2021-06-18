@@ -60,15 +60,18 @@
               <td><?php echo $s->petugas?></td>
               <td><?php echo $s->name?></td>
               <td><?php echo $s->nama_paket?></td>
-              <td><?php echo $s->total_bayar?></td>
+              <td><?php echo $s->total_bayar?></td> 
               <td><?php echo $s->no_plat?></td>
               <td><?php echo $s->bukti_bayar?></td>
               <td><?php echo $s->rating?></td>
-              <td><?php echo $s->status?></td>
-              <td>
-              <a href="/karyawan/pemesanan/edit/{{ $s->id_transaksi }}" class="btn btn-success" data-toggle="tooltip" title="Edit" >Edit</i></a>
-                  
-              </td>            
+              @if($s->status == 0)
+                  <td>Diproses</td>
+                  <td>
+                                <a href="/karyawan/pemesanan/edit/{{ $s->id_transaksi }}" class="btn btn-success" data-toggle="tooltip" title="Edit" >Edit</i></a>
+                  </td>
+                  @else 
+                  <td>Selesai</td>              
+              @endif           
             </tr>
             @endforeach
     <tbody>

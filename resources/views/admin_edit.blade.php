@@ -40,8 +40,8 @@
                     <div class="form-group">
                         <label for="" class="font-weight-bold">Validasi Pembayaran</label>
                         <select class="form-control" name="validasi" id="validasi">
-                            <option value="Lunas" @php if(($trans->validasi)=='Lunas') echo 'selected' @endphp>Lunas</option>
-                            <option value="Diproses"@php if(($trans->validasi)=='Diproses') echo 'selected' @endphp>Diproses</option>
+                            <option value="1" @php if(($trans->validasi)=='Lunas') echo 'selected' @endphp>Lunas</option>
+                            <option value="0"@php if(($trans->validasi)=='Diproses') echo 'selected' @endphp>Diproses</option>
                         </select>
                     </div>                   
 

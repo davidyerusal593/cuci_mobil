@@ -40,17 +40,21 @@
                     <div class="form-group">
                         <label for="" class="font-weight-bold">Rating</label>
                         <select class="form-control" name="rating" id="rating">
-                            <option value="Sangat tidak puas" @php if(($pesan->rating)=='Sangat tidak puas') echo 'selected' @endphp>Sangat tidak puas</option>
-                            <option value="Tidak puas"@php if(($pesan->rating)=='Tidak puas') echo 'selected' @endphp>Tidak puas</option>
-                            <option value="Sedang" @php if(($pesan->rating)=='Sedang') echo 'selected' @endphp>Sedang</option>
-                            <option value="Puas"@php if(($pesan->rating)=='Puas') echo 'selected' @endphp>Puas</option>                        
-                            <option value="Sangat Puas" @php if(($pesan->rating)=='Sangat Puas') echo 'selected' @endphp>Sangat Puas</option>                    
+                            <option value="1" @php if(($pesan->rating)=='Sangat tidak puas') echo 'selected' @endphp>Sangat tidak puas</option>
+                            <option value="2"@php if(($pesan->rating)=='Tidak puas') echo 'selected' @endphp>Tidak puas</option>
+                            <option value="3" @php if(($pesan->rating)=='Sedang') echo 'selected' @endphp>Sedang</option>
+                            <option value="4"@php if(($pesan->rating)=='Puas') echo 'selected' @endphp>Puas</option>                        
+                            <option value="5" @php if(($pesan->rating)=='Sangat Puas') echo 'selected' @endphp>Sangat Puas</option>                    
                         </select>
                     </div>
 
                     <div class="form-group">
                         <label for="" class="font-weight-bold">Ulasan</label>
                         <input type="textarea" style="width: 100%" class="form-control" name="keterangan" id="keterangan" placeholder="Masukan Ulasan">
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="font-weight-bold">Tips</label>
+                        <input type="textarea" style="width: 100%" class="form-control" name="tips" id="tips" placeholder="tips" value= "{{ $pesan->tips }}">
                     </div>
 
                 </div>

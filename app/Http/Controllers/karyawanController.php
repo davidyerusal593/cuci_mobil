@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\karyawan;
 use App\Models\transaksi;
+use App\Models\pendapatan1;
 
 
 class karyawanController extends Controller
@@ -35,6 +36,13 @@ class karyawanController extends Controller
      return redirect("/karyawan/pemesanan");
      }
 
+     public function pendapatan(){
+        $pendapatan = pendapatan1::paginate(5);
+        return view('karyawan_pendapatan',['pendapatan'=>$pendapatan]);
+       
+    }
 
+    
+    
     
 }

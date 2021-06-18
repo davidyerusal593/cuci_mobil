@@ -35,6 +35,28 @@
 
     </blockquote>
 
+<form action="/admin/transaksi/searchBydate" method="POST"> 
+@csrf
+<div class='form-group'>
+<label for="dari">Dari Tanggal</label>
+<!-- <input type="date" class='form-control'id='from_date' name='from_date' value="{{request('from_date') ? request('from_date') : ''}}"> -->
+<input type="date" class='form-control'id='from_date' name='from_date' value="{{date('Y-m-d')}}">&nbsp;
+
+</div>
+<div class='form-group'>
+<label for="sampai">Sampai Tanggal</label>
+
+<input type="date" class='form-control'id='to_date' name='to_date' value="{{date('Y-m-d')}}">&nbsp;
+
+</div>
+
+<button type="submit" name="filter" id="filter" value="admin_trans" class="btn btn-primary">Filter</button>
+
+</form>
+
+
+						
+						
 
     
     <table class="table">
@@ -58,7 +80,7 @@
 
         </tr>
     </thead>
-            @php $no=1; @endphp
+            <!-- @php $no=1; @endphp -->
             @foreach($trans as $t)
             <tr>
               <td scope="row"><?php echo $no++ ?></td>
@@ -72,13 +94,22 @@
               <td><?php echo $t->bukti_bayar?>
               <a href="/admin/transaksi/opendokumen/{{$t->bukti_bayar }}" target="_blank" class="btn btn-primary">View<span class="glyphicon glyphicon-eye-open"></a>
               </td>
-              <td><?php echo $t->validasi?></td>
+              @if($t->validasi == 0)
+                  <td>Diproses</td>
+                  @else 
+                  <td>Lunas</td>
+                  @endif               
               <td><?php echo $t->rating?></td>
-              <td><?php echo $t->status?></td>
+              @if($t->status == 0)
+                  <td>Diproses</td>
+                  @else 
+                  <td>Selesai</td> 
+                  @endif  
               <td>
               <a href="/admin/transaksi/edit/{{ $t->id_transaksi }}" class="btn btn-success" data-toggle="tooltip" title="Edit" >Edit</i></a>
-                 
-              </td>            
+              
+              </td> 
+                        
             </tr>
             @endforeach
     <tbody>

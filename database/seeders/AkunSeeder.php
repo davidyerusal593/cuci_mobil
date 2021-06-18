@@ -18,19 +18,19 @@ class AkunSeeder extends Seeder
         [
             'name' => 'Ronaldo',
             'email' => 'ronaldo@gmail.com',
-            'level' => 'admin',
+            'level' => '1',
             'password' => bcrypt('12341234')
         ],
         [
             'name' => 'Samson',
             'email' => 'samson@gmail.com',
-            'level' => 'karyawan',
+            'level' => '2',
             'password' => bcrypt('11111111')
         ],
         [
             'name' => 'David',
             'email' => 'david@gmail.com',
-            'level' => 'pelanggan',
+            'level' => '3',
             'password' => bcrypt('11111111')
         ]
     ];

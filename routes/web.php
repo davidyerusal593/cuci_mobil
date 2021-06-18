@@ -24,6 +24,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/tambah', function () {
+    return view('admin_tambahuser');
+});
+
 Route::get('login','App\Http\Controllers\AuthController@index')->name('login');
 Route::post('proses_login','App\Http\Controllers\AuthController@proses_login')->name('proses_login');
 Route::get('logout','App\Http\Controllers\AuthController@logout')->name('logout');
@@ -55,6 +59,19 @@ Route::post('/admin/transaksi/simpanTrans','App\Http\Controllers\adminController
 Route::get('/admin/transaksi/edit/{id_transaksi}', 'App\Http\Controllers\adminController@edit')->name('edit');
 Route::put('/admin/transaksi/updated/{id_transaksi}', 'App\Http\Controllers\adminController@updated');
 Route::get('/admin/transaksi/opendokumen/{id_transaksi}','App\Http\Controllers\adminController@opendokumen');
+Route::get('/admin/pendapatan','App\Http\Controllers\adminController@pendapatan');
+Route::get('/admin/transaksi/filter','adminController@inboxFilter')->name('inbox.filter');
+Route::get('/admin/data_user','App\Http\Controllers\adminController@data_user')->name('data_user'); 
+Route::get('/admin/input_user','App\Http\Controllers\adminController@input_user')->name('input_user'); 
+Route::post('/admin/simpan_user','App\Http\Controllers\adminController@simpan_user')->name('simpan_user'); 
+Route::resource('/admin/daterange', 'App\Http\Controllers\adminController@filter');
+Route::post('/admin/transaksi/searchBydate','App\Http\Controllers\adminController@searchBydate')->name('searchBydate'); 
+Route::get('/admin/dataCuci','App\Http\Controllers\adminController@dataCuci')->name('dataCuci'); 
+Route::get('/admin/input_gratis','App\Http\Controllers\adminController@input_gratis')->name('input_gratis'); 
+Route::post('/admin/simpan_gratis','App\Http\Controllers\adminController@simpan_gratis')->name('simpan_gratis'); 
+// Route::get('/admin/hitung_pend','App\Http\Controllers\adminController@hitung_pend')->name('hitung_pend'); 
+
+
 
 
 Route::get('/transaksi', 'App\Http\Controllers\TransaksiController@index');
@@ -64,6 +81,8 @@ Route::get('/transaksi/export_excel', 'App\Http\Controllers\TransaksiController@
 Route::get('/karyawan/pemesanan','App\Http\Controllers\karyawanController@pemesanan');
 Route::get('/karyawan/pemesanan/edit/{id_transaksi}', 'App\Http\Controllers\karyawanController@edit')->name('edit');
 Route::put('/karyawan/pemesanan/updated/{id_transaksi}', 'App\Http\Controllers\karyawanController@updated');
+Route::get('/karyawan/pendapatan','App\Http\Controllers\karyawanController@pendapatan');
+
 
 Route::get('/pelanggan/pesan','App\Http\Controllers\pelangganController@pesan');
 Route::get('/pelanggan/pesanan','App\Http\Controllers\pelangganController@pesanan');

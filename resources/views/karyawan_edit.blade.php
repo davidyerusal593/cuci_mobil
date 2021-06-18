@@ -1,4 +1,4 @@
-@extends('layouts.layoutpelanggan')
+@extends('layouts.layoutkaryawan')
 
 @section('top')
 <!-- Custom styles for this page -->
@@ -40,9 +40,9 @@
                     <div class="form-group">
                         <label for="" class="font-weight-bold">Status</label>
                         <select class="form-control" name="status" id="status">
-                            <option value="Selesai" @php if(($status->status)=='Selesai') echo 'selected' @endphp>Selesai</option>
-                            <option value="Diproses"@php if(($status->status)=='Diproses') echo 'selected' @endphp>Diproses</option>
-                            <option value="Dicuci" @php if(($status->status)=='Dicuci') echo 'selected' @endphp>Dicuci</option>        
+                            <option value="1" @php if(($status->status)=='Selesai') echo 'selected' @endphp>Selesai</option>
+                            <option value="0"@php if(($status->status)=='Diproses') echo 'selected' @endphp>Diproses</option>
+                                    
                         </select>
                     </div>                   
 

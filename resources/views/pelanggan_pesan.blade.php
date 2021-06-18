@@ -39,6 +39,7 @@
             <label for="exampleFormControlInput1">Jam Cuci</label>
             <input type="time" style="width: 50%" class="form-control" name="jam_cuci" id="jam_cuci" placeholder="Masukan Jam Cuci">
         </div>
+        
          
         <div class="form-group">  
             <label>Pilih Petugas</label><br>
@@ -53,11 +54,12 @@
             <input type="text" style="width: 50%" class="form-control" name="total_bayar" id="total_bayar" value="35000" readonly>
             <input type="hidden" style="width: 50%" class="form-control" name="nama_paket" id="nama_paket" value="Paket Relaks" readonly>
             
+            <input type="hidden" style="width: 50%" class="form-control" name="tips" id="tips" value="-">
             <input type="hidden" style="width: 50%" class="form-control" name="validasi" id="validasi" value="Diproses">
             <input type="hidden" style="width: 50%" class="form-control" name="pencucian" id="pencucian" value="0">
             <input type="hidden" style="width: 50%" class="form-control" name="status" id="status" value="-">
             <input type="hidden" style="width: 50%" class="form-control" name="keterangan" id="keterangan" value="-">
-            <input type="hidden" style="width: 50%" class="form-control" name="rating" id="rating" value="-">
+            <input type="hidden" style="width: 50%" class="form-control" name="rating" id="rating" value="0">
         </div>
         <div class="form-group">
             <label for="exampleFormControlInput1">No. Plat</label>

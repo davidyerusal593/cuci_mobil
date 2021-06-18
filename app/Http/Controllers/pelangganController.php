@@ -37,9 +37,6 @@ class pelangganController extends Controller
         DB::table('transaksi')->insert([
             'tgl_cuci' => $request->tgl_cuci,
             'jam_cuci' => $request->jam_cuci,
-            'id_karyawan' => 0,
-            'id_pelanggan' => 0,
-            'id_paket' => 0,
             'petugas' => $request->petugas,
             'name' => $request->name,
             'nama_paket' => $request->nama_paket,
@@ -49,8 +46,8 @@ class pelangganController extends Controller
             'keterangan' => $request->keterangan,
             'pencucian' => $pencucian,
             'bukti_bayar' => $request->bukti_bayar,
-            'validasi' => $request->validasi,   
-            'status' => $request->status
+            'validasi' => 0,   
+            'status' => 0
         ]);
         if($pencucian==11){
             return 'gratis cuci';
@@ -68,6 +65,7 @@ class pelangganController extends Controller
          $pesan = transaksi::find($id_transaksi);
          $pesan->rating = $request->rating;
          $pesan->keterangan = $request->keterangan;
+         $pesan->tips = $request->tips;
          $pesan->save();
         
      return redirect("/pelanggan/pesanan");
@@ -81,4 +79,5 @@ class pelangganController extends Controller
         readfile($path);
     }
     
+   
 }
